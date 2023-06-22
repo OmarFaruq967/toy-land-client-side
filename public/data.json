@@ -1,0 +1,67 @@
+[
+      {
+        "category": "Car Toys",
+        "toys": [
+          {
+            "id": "1",
+            "picture": "https://i.ibb.co/bFvktRM/Remort-car.png",
+            "name": "Remote Control Race Car",
+            "price": "$29.99",
+            "rating": 4.5,
+            "description": "Experience high-speed racing with this remote control race car. It comes with responsive controls and a sleek design."
+          },
+          {
+            "id": "2",
+            "picture": "https://i.ibb.co/VWftcyp/construction-car.png",
+            "name": "Construction Vehicle Set",
+            "price": "$19.99",
+            "rating": 4.2,
+            "description": "Let your child explore construction play with this set of toy vehicles. It includes a dump truck, bulldozer, and excavator."
+          }
+        ]
+      },
+      {
+        "category": "Helicopter Toys",
+        "toys": [
+          {
+            "id": "3",
+            "picture": "https://i.ibb.co/xD1C8TG/Helicopter.png",
+            "name": "Remote Control Helicopter",
+            "price": "$34.99",
+            "rating": 4.0,
+            "description": "Take to the skies with this remote control helicopter. It features gyroscopic stabilization for smooth flights."
+          },
+          {
+            "id": "4",
+            "picture": "https://i.ibb.co/vB7GXc6/Resque-Helicopter.png",
+            "name": "Rescue Helicopter Playset",
+            "price": "$24.99",
+            "rating": 4.7,
+            "description": "Let your child play the hero with this rescue helicopter playset. It includes a helicopter, figures, and rescue accessories."
+          }
+        ]
+      },
+      {
+        "category": "Excavator Toys",
+        "toys": [
+          {
+            "id": "5",
+            "picture": "https://i.ibb.co/xXv9xB9/Remort-Exavator.png",
+            "name": "Remote Control Excavator",
+            "price": "$39.99",
+            "rating": 4.8,
+            "description": "Bring the construction site to life with this remote control excavator. It features realistic digging and sound effects."
+          },
+          {
+            "id": "6",
+            "picture": "https://i.ibb.co/D4SHB9S/Sand-exavator.png",
+            "name": "Sand and Dig Excavator",
+            "price": "$29.99",
+            "rating": 4.6,
+            "description": "Let your child dig, scoop, and play with this sand and dig excavator. Perfect for outdoor adventures."
+          }
+        ]
+      }
+    ]
+
+  
