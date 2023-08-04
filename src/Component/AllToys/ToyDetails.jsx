@@ -27,7 +27,7 @@ const ToyDetails = () => {
 
           <div className="card lg:card-side bg-base-100 shadow-xl px-10 py-10">
             <figure>
-              <img className="w-[650px]" src={data.toyURL} alt="Image" />
+              <img className="w-[650px]" src={data.image} alt="Image" />
             </figure>
             <div className="card-body">
               <h2 className="card-title font-semibold">Name: {data.toyName}</h2>

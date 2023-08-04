@@ -3,9 +3,8 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
-
 const Login = () => {
-  const { signIn, signInWithGoogle,} = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -31,19 +30,17 @@ const Login = () => {
       });
   };
 
-  const handleGoogleSignIn = ()=>{
-    signInWithGoogle ()
-    .then(result=>{
-      const loggedUser = result.user;
-      console.log(loggedUser);
-      navigate(from, { replace: true });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
-
- 
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -115,17 +112,17 @@ const Login = () => {
             </div>
 
             {/* Social Media Loing */}
+            <div className="divider">OR</div>
             <div className=" flex mx-auto justify-center gap-3">
               {/* Google login */}
               <div
-          onClick={handleGoogleSignIn}
-          className='flex justify-center items-center space-x-2  m-3 p-2 border border-gray-300 rounded-lg cursor-pointer'
-        >
-          <FcGoogle size={25} />
+                onClick={handleGoogleSignIn}
+                className="flex justify-center items-center space-x-2  m-3 p-2 border border-gray-300 rounded-lg cursor-pointer"
+              >
+                <FcGoogle size={25} />
 
-          <p>Continue with Google</p>
-        </div>
-            
+                <p>Continue with Google</p>
+              </div>
             </div>
           </form>
         </div>

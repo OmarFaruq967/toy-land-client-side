@@ -31,12 +31,12 @@ const Header = () => {
 
   const navMenu = (
     <>
-      <li className="font-semibold">
+      <li className="font-semibold ">
         <NavLink
           to="/"
           aria-label="Home"
           title="Home"
-          className={({ isActive }) => (isActive ? "active" : "default")}
+          className={({ isActive }) => (isActive ? "active" : "default") }
         >
           Home
         </NavLink>

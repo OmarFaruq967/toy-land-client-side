@@ -1,10 +1,10 @@
 import React, {useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import MyToysRow from './MyToysRow';
+import Container from '../Shared/Container/Container';
 
 const MyToys = () => {
     const {user} = useContext(AuthContext);
-
     const[myToys, setMyToys]= useState ([])
     const [control , setControl] = useState(false)
 
@@ -35,6 +35,7 @@ const MyToys = () => {
 
     return (
 <div className=' mx-10 my-10 '>
+    <Container></Container>
     <div className='text-center font-bold text-xl'> My Toys: {myToys.length}</div>
 
    

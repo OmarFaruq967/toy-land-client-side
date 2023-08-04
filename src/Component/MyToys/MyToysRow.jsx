@@ -11,7 +11,7 @@ const MyToysRow = ({ myToy, serialNumber, handleDelete }) => {
     price,
     availableQuantity,
     detailDescription,
-    toyURL,
+    image,
     email
   } = myToy;
 
@@ -52,7 +52,7 @@ const MyToysRow = ({ myToy, serialNumber, handleDelete }) => {
         <td className="w-4 p-4">{serialNumber}</td>
         <td className="px-6 py-4"> <img
             className="w-10 h-10 rounded-full"
-            src={toyURL}
+            src={image}
             alt="Jese image"
           /></td>
           <td className="w-4 p-4"><div className="text-base font-semibold">{toyName}</div></td>
