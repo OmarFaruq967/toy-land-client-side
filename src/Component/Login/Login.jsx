@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FaGoogle, } from 'react-icons/fa';
+import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
@@ -117,11 +117,14 @@ const Login = () => {
             {/* Social Media Loing */}
             <div className=" flex mx-auto justify-center gap-3">
               {/* Google login */}
-              <div>
-                <button onClick={handleGoogleSignIn} className="text-sm text-center flex gap-1 mx-auto justify-center">
-                  <FaGoogle/>Login with Google
-                </button>
-              </div>
+              <div
+          onClick={handleGoogleSignIn}
+          className='flex justify-center items-center space-x-2  m-3 p-2 border border-gray-300 rounded-lg cursor-pointer'
+        >
+          <FcGoogle size={25} />
+
+          <p>Continue with Google</p>
+        </div>
             
             </div>
           </form>

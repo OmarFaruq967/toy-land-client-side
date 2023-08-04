@@ -4,7 +4,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 
 const Register = () => {
-  const {createUser} = useContext (AuthContext)
+  const {createUser, updateUserProfile} = useContext (AuthContext)
   const navigate= useNavigate ();
   const location = useLocation();
   console.log(location);
@@ -23,8 +23,8 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
-
     console.log(name, email, photo, password)
+
     if (password.length < 7 ) {
       setError("Password should be more than 6 characters");
       return;
@@ -32,12 +32,23 @@ const Register = () => {
     else{
       setSuccess("User created successfully!");
     }
+
+    
     createUser(email, password)
     .then(result => {
       const createdUser = result.user;
       console.log(createdUser);
-      createdUser.displayName= name,
-      createdUser.photoURL= photo,
+      // createdUser.displayName= name,
+      // createdUser.photoURL= photo,
+      updateUserProfile(name, photo)
+          .then(() => {
+            console.log("user profile");
+            const saveUser = { name: name, email: email };
+          })
+          .catch((error) => {
+            setError(error.message);
+            console.log(error);
+          });
       navigate(from, { replace: true });
     })
     .catch(error =>{

@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/toy/:id",
-        element: <PrivetRoute><ToyDetails/>,</PrivetRoute>,
+        element: <PrivetRoute><ToyDetails/></PrivetRoute>,
         loader: ({params}) => fetch(`https://toy-land-server-drab.vercel.app/toys/${params.id}`)
       },
       {
