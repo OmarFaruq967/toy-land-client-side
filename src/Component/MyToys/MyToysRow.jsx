@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { FaPenSquare, FaRegTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 
 
 
-const MyToysRow = ({ myToy, serialNumber, handleDelete }) => {
+const MyToysRow = ({ myToy,  serialNumber, handleDelete }) => {
   const {
     toyName,
     sellerName,
@@ -50,65 +52,54 @@ const MyToysRow = ({ myToy, serialNumber, handleDelete }) => {
     <>
       <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <td className="w-4 p-4">{serialNumber}</td>
-        <td className="px-6 py-4"> <img
+        <td className=" px-6 py-4"> <img
             className="w-10 h-10 rounded-full"
             src={image}
             alt="Jese image"
           /></td>
-          <td className="w-4 p-4"><div className="text-base font-semibold">{toyName}</div></td>
+          <td className=""><div className="text-base font-semibold">{toyName}</div></td>
          
         <th
           scope="row"
-          className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
+          className=""
         >
-          <div className="pl-3">
+          <div className="items-center">
             <div className="text-base font-semibold">{sellerName}</div>
             <div className="font-normal text-gray-500">{email}</div>
           </div>
         </th>
          
-        {/* <th
-          scope="row"
-          className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          <img
-            className="w-10 h-10 rounded-full"
-            src={toyURL}
-            alt="Jese image"
-          />
-          <div className="pl-3">
-            <div className="text-base font-semibold">{toyName}</div>
-            <div className="font-normal text-gray-500">{email}</div>
-          </div>
-        </th> */}
-        <td className="px-6 py-4">{price}</td>
+        <td className="py-4">{price}</td>
         
-        <td className="px-6 py-4">
+        <td className="py-4">
           <div className="flex items-center">
             {availableQuantity}
           </div>
         </td>
         
-        <td className="px-6 py-4 ">
-          <div className="flex items-center">
+        <td className="py-4 w-[300px] pr-8 ">
+          <div className="flex items-center text-justify">
             {detailDescription}
           </div>
         </td>
-        <td className="px-6 py-4">
+        <td className=" py-4">
           {/* <a
             href="#"
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-5"
           >
             Update
           </a> */}
-          <button className="btn btn-xs mr-2 bg-[#5850ec]">Update</button>
+          <Link to={`/toys/${myToy?._id}`}>
+          <button className="btn btn-xs mr-2 bg-[#5850ec]"><FaPenSquare/></button>
+          </Link>
+          
           {/* <a
             href="#"
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           >
             Delete
           </a> */}
-          <button onClick={() => handleDelete(myToy?._id)} className="btn btn-xs bg-[#5850ec]">Delete</button>
+          <button onClick={() => handleDelete(myToy?._id)} className="btn btn-xs bg-[#5850ec]"><FaRegTrashAlt/></button>
         </td>
       </tr>
     </>

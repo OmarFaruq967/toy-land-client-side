@@ -11,8 +11,8 @@ const Banner = ({img, subtitle, title}) => {
 
         <div className=" h-96  flex mx-0 items-center justify-center">
           <div className="z-10 text-white text-center ">
+            <h1 className="text-4xl my-2 font-extrabold">{title} </h1>
             <h3 className="text-xl font-bold">{subtitle}</h3>
-            <h1 className="text-4xl font-extrabold">{title} </h1>
           </div>
         </div>
       </div>

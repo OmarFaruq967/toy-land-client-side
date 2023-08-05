@@ -19,6 +19,7 @@ import MyToys from './Component/MyToys/MyToys';
 import PrivetRoute from './Component/Routes/PrivetRoute';
 import ToyDetails from './Component/AllToys/ToyDetails';
 import Blog from './Component/Blog/Blog';
+import ToyUpdated from './Component/MyToys/ToyUpdated';
 
 
 
@@ -63,9 +64,15 @@ const router = createBrowserRouter([
         element: <PrivetRoute><ToyDetails/></PrivetRoute>,
         loader: ({params}) => fetch(`https://toy-land-server-drab.vercel.app/toys/${params.id}`)
       },
+      
       {
         path:"my-toys",
         element:<PrivetRoute><MyToys/></PrivetRoute>
+      },
+      {
+        path:"/toys/:id",
+        element: <ToyUpdated></ToyUpdated>,
+        loader: ({params})=> fetch(`https://toy-land-server-drab.vercel.app/toys/${params.id}`)
       },
     ],
   },

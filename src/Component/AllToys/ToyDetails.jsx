@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Banner from '../Shared/Banner/Banner';
 
 const ToyDetails = () => {
   const { id } = useParams();
@@ -19,17 +20,13 @@ const ToyDetails = () => {
 
   return (
     <div>
+      <Banner img={data.image} title={data.toyName} subtitle=' Product Details'/>
       <div className="my-14 mx-20 ">
-          <h2 className="text-center text-2xl font-semibold py-10">
-            Product Details of: <span className='text-[#570df8]'>{data.toyName}</span> 
-            <span className="text-[#5850ec] font-bold"> {data.name}</span>{" "}
-          </h2>
-
           <div className="card lg:card-side bg-base-100 shadow-xl px-10 py-10">
             <figure>
-              <img className="w-[650px]" src={data.image} alt="Image" />
+              <img className="w-[850px]" src={data.image} alt="Image" />
             </figure>
-            <div className="card-body">
+            <div className="card-body pl-24">
               <h2 className="card-title font-semibold">Name: {data.toyName}</h2>
               <div>
               <p className="font-semibold">Seller Name: <span className='font-normal'>{data.sellerName}</span> </p>
