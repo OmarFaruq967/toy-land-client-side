@@ -3,9 +3,6 @@ import { FaPenSquare, FaRegTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 
-
-
-
 const MyToysRow = ({ myToy,  serialNumber, handleDelete }) => {
   const {
     toyName,
@@ -57,11 +54,11 @@ const MyToysRow = ({ myToy,  serialNumber, handleDelete }) => {
             src={image}
             alt="Jese image"
           /></td>
-          <td className=""><div className="text-base font-semibold">{toyName}</div></td>
+          <td className="px-6"><div className="text-base font-semibold">{toyName}</div></td>
          
         <th
           scope="row"
-          className=""
+          className=" px-6 "
         >
           <div className="items-center">
             <div className="text-base font-semibold">{sellerName}</div>
@@ -69,20 +66,20 @@ const MyToysRow = ({ myToy,  serialNumber, handleDelete }) => {
           </div>
         </th>
          
-        <td className="py-4">{price}</td>
+        <td className="py-4 px-6">{price}</td>
         
-        <td className="py-4">
+        <td className="py-4 px-6">
           <div className="flex items-center">
             {availableQuantity}
           </div>
         </td>
         
-        <td className="py-4 w-[300px] pr-8 ">
+        <td className="py-4 w-[300px] pr-8 px-6 ">
           <div className="flex items-center text-justify">
             {detailDescription}
           </div>
         </td>
-        <td className=" py-4">
+        <td className=" py-4 ">
           {/* <a
             href="#"
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-5"
@@ -90,16 +87,10 @@ const MyToysRow = ({ myToy,  serialNumber, handleDelete }) => {
             Update
           </a> */}
           <Link to={`/toys/${myToy?._id}`}>
-          <button className="btn btn-xs mr-2 bg-[#5850ec]"><FaPenSquare/></button>
+          <button className="btn btn-sm mr-2 bg-[#5850ec]"><FaPenSquare/></button>
           </Link>
           
-          {/* <a
-            href="#"
-            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-          >
-            Delete
-          </a> */}
-          <button onClick={() => handleDelete(myToy?._id)} className="btn btn-xs bg-[#5850ec]"><FaRegTrashAlt/></button>
+          <button onClick={() => handleDelete(myToy?._id)} className="btn btn-sm bg-[#5850ec]"><FaRegTrashAlt/></button>
         </td>
       </tr>
     </>

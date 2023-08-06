@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Banner from "../Shared/Banner/Banner";
 import p2 from "../../../public/images/gallery/P1.png";
 import Container from "../Shared/Container/Container";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -59,7 +60,14 @@ const AddToy = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert("Toy added successfully");
+          // alert("Toy added successfully");
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Toy added successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
       });
     })
@@ -68,8 +76,8 @@ const AddToy = () => {
     <div className="">
       <Banner img={p2} title="Add your toy" subtitle="Add your toy for sell" />
       <Container>
-        <div className="flex gap-8">
-          <div >
+        <div className=" md:flex gap-8">
+          <div className="" >
             <img className=" rounded-lg" src='https://source.unsplash.com/random/640x620' alt="" />
           </div>
           <div className="border rounded-lg p-5">

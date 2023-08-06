@@ -34,7 +34,7 @@ const AllToysRow = ({ allToy, serialNumber }) => {
             <div className="font-normal text-gray-500">{email}</div>
           </div>
         </th>
-        <td className="w-4 p-4">
+        <td className="p-4">
           <div className="text-base font-semibold">{toyName}</div>
         </td>
 

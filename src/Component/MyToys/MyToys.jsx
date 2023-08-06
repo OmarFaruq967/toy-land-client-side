@@ -4,6 +4,7 @@ import MyToysRow from "./MyToysRow";
 import Container from "../Shared/Container/Container";
 import Banner from "../Shared/Banner/Banner";
 import photo1 from '../../../public/images/gallery/P10.png'
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -19,18 +20,37 @@ const MyToys = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`https://toy-land-server-drab.vercel.app/remove/${id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result?.deletedCount > 0) {
-          alert("Toy deleted successfully");
-          setControl(!control);
-        }
-      });
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://toy-land-server-drab.vercel.app/remove/${id}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data?.deletedCount > 0) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              );
+              setControl(!control);
+            } 
+          })
+         
+      }
+    });
   };
+  
 
   return (
     <div className=" ">
@@ -148,22 +168,22 @@ const MyToys = () => {
               <th scope="col" className="px-6  py-3">
                 Photo
               </th>
-              <th scope="col" className=" py-3">
+              <th scope="col" className=" py-3 px-6">
                 Name
               </th>
-              <th scope="col" className=" py-3">
+              <th scope="col" className=" py-3 px-6">
                 Seller Info
               </th>
-              <th scope="col" className="py-3">
+              <th scope="col" className="py-3 px-6">
                 Price
               </th>
-              <th scope="col" className="py-3">
+              <th scope="col" className="py-3 px-6">
                 Quantity
               </th>
-              <th scope="col" className=" py-3 w-[300px] pr-8">
+              <th scope="col" className=" py-3 w-[300px] pr-8 px-6">
                 Detail
               </th>
-              <th scope="col" className=" py-3">
+              <th scope="col" className=" py-3 px-6">
                 Action
               </th>
             </tr>
